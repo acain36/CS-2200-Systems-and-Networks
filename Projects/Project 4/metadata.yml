@@ -1,0 +1,12 @@
+---
+:id: 148615062
+:submitters:
+- :name: Ashley Leora Cain
+  :email: acain36@gatech.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2022-11-14 04:56:10.913665000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2022-11-13 20:56:10.913665000 Z
+:status: processed
+:score: 85.0

@@ -1,0 +1,13 @@
+CS 2200 Fall 2022
+Homework 2
+
+Name: Ashley Cain
+GT Username: acain36
+
+Problem 3
+----------
+
+/* Fix me */
+
+LEA $ra, $zero	! This will load the value of the PC into $ra as the return address
+BR target	! This will increment the PC to the address of the target address

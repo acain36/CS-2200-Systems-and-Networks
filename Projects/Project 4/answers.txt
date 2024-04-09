@@ -1,0 +1,85 @@
+CS 2200 Fall 2022
+Project 4
+
+Name:
+GT Username:
+
+Problem 1B (FCFS Scheduler)
+----------
+
+/*
+	There is an inverse relationship between the number of CPUs 	
+	and the total execution time, but this doesn’t have a linear 
+	correlation. For example, from 1 to 2 CPUs, the time drops 
+	from 68 to 39.6 secs, whereas when moving from 4 to 8 CPUs, 
+	the time drops from 37.2 to 36.7 secs, a much less 
+	significant change. The reason for this comes from 
+	diminishing returns of adding additional CPUs in a 
+	circumstance where much of the time spent by new CPUs is in 
+	waiting for a process to be ready to execute, so there isn’t 
+	much improvement to be had when there is minimal waiting 
+	time for processes that are ready to be run.
+
+*/
+
+Problem 2B (Round-Robin)
+----------
+
+/* 
+	The waiting time and timeslice length have a positive linear 
+	relationship, meaning that as the timeslice length 
+	increases, so does the waiting time for processes. Since in 
+	the round robin scheduling algorithm, each process is 
+	assigned a time slice upon being scheduled, then shorter 
+	processes have a longer waiting time in completing their CPU 
+	burst. Although a shorter timeslice length seems to be an 
+	intuitive solution for this issue, in a real OS, this would 
+	not be the most efficient way of scheduling processes and 
+	allowing them to complete. Shorter processes may be able to 
+	finish running by the end of the timeslice, but longer 
+	processes are more likely to still be running and put back 
+	in the ready queue to wait until they are able to run again. 
+	This would increase time spent in context switching between 
+	processes, which may ultimately increase the overall 
+	execution time more than the increased waiting time original 
+	had.
+*/
+
+Problem 3B (Preemptive Priority)
+----------
+
+/*
+	A way to reduce starvation among processes caused by 
+	priority scheduling is to increase the potential for a 
+	process to be run based on the amount of time it has spent 
+	in the ready queue. One way of doing this would be to 
+	incrementally raise the priority for processes as they wait 
+	in the ready queue, allowing the longer waiting processes an 
+	increased level of priority over newer processes. 
+*/
+
+Problem 4 (The Priority Inversion Problem)
+---------
+
+/*
+	In order to solve this issue, we could increase the 
+	priority of Z while it is using S so that Y can’t begin to 
+	run and interrupt Z since X is a higher priority process, 
+	dependent on the completion of Z. In order to do this, in 
+	times that a process is using a resource that has other 
+	dependent processes, we could allow the running process to 
+	assume the priority of the process that is dependent on the 
+	resource and ready to run with the highest priority of all 
+	processes with these same qualities. This way, while Z is 
+	using S, it can temporarily assume the priority of X until 
+	it is able to give up the lock that it has over S, in order 
+	to allow X to begin execution before Y. In a way, you could 
+	consider the completion of Z’s usage of S as a part of X’s 
+	execution, since it can’t begin running until this is 
+	complete. By this logic, it makes sense that Z, during this 
+	usage of S, would have the same high priority as the 
+	process depending on its completion.
+*/
+
+
+
